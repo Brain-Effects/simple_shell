@@ -5,7 +5,7 @@
 #define BUFFER_SIZE 1024
 
 /**
- * getline - Reads a line from a file descriptor into a buffer
+ * my_getline - Reads a line from a file descriptor into a buffer
  * @fd: The file descriptor to read from
  * @buffer: The buffer to store the line
  * @size: The size of the buffer
@@ -14,8 +14,8 @@
 int my_getline(int fd, char *buffer, size_t size)
 {
 	static char buf[BUFFER_SIZE];
-	static int pos = 0;
-	static int len = 0;
+	static int pos;
+	static int len;
 	int count = 0;
 	char c;
 
@@ -35,7 +35,7 @@ int my_getline(int fd, char *buffer, size_t size)
 		return (count);
 		}
 		pos = 0;
-	}	
+	}
 		c = buf[pos++];
 		buffer[count++] = c;
 		if (c == '\n')

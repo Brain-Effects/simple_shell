@@ -7,15 +7,17 @@
 
 /**
  * my_exit - exits the shell with a given status or an error message
+ * @env: the environment variables, a NULL-terminated array of strings
+ * @cmd: the command and its arguments, a NULL-terminated array of strings
  * Return: nothing, exits the program
  */
-int my_exit(char **env)
+
+int my_exit(char **cmd, char **env)
 {
 	char *buf = NULL;
 	size_t buflen = 0;
 
-	do
-	{
+	do {
 	prompt_user();
 
 	if (getline(&buf, &buflen, stdin) == -1)
@@ -26,7 +28,7 @@ int my_exit(char **env)
 		free(buf);
 		buf = NULL;
 	continue;
-		}
+	}
 
 	if (strncmp(buf, "exit", 4) == 0)
 		exit_shell(buf);
@@ -44,7 +46,7 @@ int my_exit(char **env)
 		free(buf);
 		buf = NULL;
 	}
-			
+
 	while (1);
 	exit(EXIT_SUCCESS);
 }

@@ -11,6 +11,7 @@
 void print_prompt(void)
 {
 	ssize_t ret;
+
 	ret = write(STDOUT_FILENO, "$ ", 2);
 	if (ret == -1)
 	{

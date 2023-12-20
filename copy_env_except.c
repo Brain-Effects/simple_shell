@@ -4,7 +4,8 @@
 #include "shell.h"
 
 /**
- * copy_env_except - Copies the environment variables except the one to be removed
+ * copy_env_except - Copies the environment variables
+ * except the one to be removed
  * @env: The original environment variables
  * @newenv: The new environment variables
  * @name: The name of the variable to be removed

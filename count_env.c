@@ -11,6 +11,7 @@
 int count_env(char **env)
 {
 	int count = 0;
+
 	while (env[count] != NULL)
 		count++;
 	return (count);

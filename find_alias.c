@@ -13,7 +13,8 @@ alias_t *find_alias(char *name, alias_t *head)
 {
 	alias_t *node = head;
 
-	while (node) {
+	while (node)
+	{
 	if (strcmp(node->name, name) == 0)
 	break;
 		node = node->next;

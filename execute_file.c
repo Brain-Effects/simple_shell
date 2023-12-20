@@ -42,7 +42,16 @@ int execute_file(char *filename)
 	return (0);
 }
 
-/* main - Test the execute_file function */
+/**
+ * main_execute - Test the execute_file function
+ * @argc: The number of arguments
+ * @argv: The array of arguments
+ *
+ * Description: This function takes a filename as an argument and calls the
+ * execute_file function to run the commands in the file. It prints the usage
+ * message if the argument is missing and exits with the appropriate status.
+ * Return: 0 on success, 1 on error
+ */
 int main_execute(int argc, char *argv[])
 {
 	int fd_err;

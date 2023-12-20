@@ -12,7 +12,7 @@ int print_alias_list(alias_t *head)
 {
 	alias_t *node = head;
 	int ret;
-	
+
 	while (node)
 	{
 	ret = write(STDOUT_FILENO, node->name, strlen(node->name));

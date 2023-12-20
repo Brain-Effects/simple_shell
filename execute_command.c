@@ -5,8 +5,6 @@
 
 #define NEWLINE '\n'
 
-extern char *env[];
-char *cmd[20];
 /**
  * execute_command - executes the command in a child process
  * @cmd: the command and its arguments

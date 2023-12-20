@@ -11,8 +11,6 @@
  * Return: A new string with the variables replaced, or NULL on failure
  */
 
-char *itoa(int value, char *str, int base);
-
 char *replace_var(char *str, int status, int pid)
 {
 	char *new_str, *temp, *dollar;
@@ -23,7 +21,7 @@ char *replace_var(char *str, int status, int pid)
 	if (str == NULL)
 		return (NULL);
 
-	status_str = itoa(status, buffer, 10 );
+	status_str = itoa(status, buffer, 10);
 	pid_str = itoa(pid, buffer, 10);
 
 	len = strlen(str) + 1;

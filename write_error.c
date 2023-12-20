@@ -11,6 +11,7 @@ void write_error(const char *msg)
 {
 	size_t len = strlen(msg) + 1;
 	ssize_t ret = write(STDERR_FILENO, msg, len);
+
 	if (ret == -1)
 	{
 		perror("write");

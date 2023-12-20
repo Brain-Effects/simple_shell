@@ -23,20 +23,25 @@ int main(void)
 	while (1)
 {
 	print_prompt();
-	if(read_cmd(&cmd,&cmd_len) == -1)
+	if (read_cmd(&cmd, &cmd_len) == -1)
 	exit(0);
 
-	if(strlen(cmd) == 0)
+	if (strlen(cmd) == 0)
 	continue;
 
-	tokenize_cmd(cmd,args);
+	tokenize_cmd(cmd, args);
 
-	if(handle_builtin(args) == 0)
+	if (handle_builtin(args) == 0)
 	execute_cmd(args);
 }
 	free(cmd);
-	return(0);
+	return (0);
 }
+
+/**
+ * print_env - Prints the environment variables
+ * @env: The array of environment variables
+ */
 void print_env(char *env[])
 {
 	int i;
@@ -56,6 +61,11 @@ void print_env(char *env[])
 	}
 }
 
+/**
+ * tok_str - Tokenizes a string using delimiters
+ * @str: The string to be tokenized
+ * @tokens: The array of strings to store the tokens
+ */
 void tok_str(char *str, char *tokens[])
 {
 	char *token;
@@ -72,6 +82,10 @@ void tok_str(char *str, char *tokens[])
 	tokens[i] = NULL;
 }
 
+/**
+ * add_path - Adds the path of the executable file to the command
+ * @cmd: The array of strings containing the command and arguments
+ */
 void add_path(char *cmd[])
 {
 	char *path;

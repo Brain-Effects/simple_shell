@@ -12,6 +12,7 @@ void prompt_user(void)
 {
 	size_t len = strlen(":) ") + 1;
 	ssize_t ret = write(2, ":) ", len);
+
 	if (ret == -1)
 	{
 		perror("write");

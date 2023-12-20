@@ -4,9 +4,11 @@
 #include <unistd.h>
 
 /**
- * process_alias_args - Loop through the arguments and process them
- * @args: The arguments to the command
+ * create_or_update_alias - Create or update an alias
+ * @name: The name of the alias
+ * @value: The value of the alias
  * @head: A pointer to the head of the alias list
+ * @arg: The arguments to the command
  * Return: 0 on success, -1 on failure
  */
 int create_or_update_alias(char *name, char *value, alias_t **head, char **arg)
@@ -21,7 +23,7 @@ int create_or_update_alias(char *name, char *value, alias_t **head, char **arg)
 	{
 		name = arg[i];
 		value = equal + 1;
-		ret = create_or_update_alias(name, value, head, arg);
+		ret = create_alias(name, value, head);
 	}
 	else
 	{
