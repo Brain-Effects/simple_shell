@@ -5,14 +5,11 @@
 
 #define NEWLINE '\n'
 
-extern char *env[];
-char *cmd[20];
-
 /**
  * my_exit - exits the shell with a given status or an error message
  * Return: nothing, exits the program
  */
-int my_exit(void)
+int my_exit(char **env)
 {
 	char *buf = NULL;
 	size_t buflen = 0;

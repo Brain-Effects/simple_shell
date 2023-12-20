@@ -5,9 +5,6 @@
 
 #define NEWLINE '\n'
 
-extern char *env[];
-char *cmd[20];
-
 /**
  * exit_shell - exits the shell with a given status or an error message
  * @buf: the input buffer

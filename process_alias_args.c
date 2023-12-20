@@ -9,21 +9,26 @@
  * @head: A pointer to the head of the alias list
  * Return: 0 on success, -1 on failure
  */
-
-int process_alias_args(char **args, alias_t **head)
+int create_or_update_alias(char *name, char *value, alias_t **head, char **arg)
 {
-	char *name, *value, *equal;
+	char *equal;
 	int i, ret;
 
-  for (i = 0; args[i]; i++)
+	for (i = 0; arg[i]; i++)
 	{
-	equal = strchr(args[i], '=');
+	equal = strchr(arg[i], '=');
 	if (equal)
-	ret = create_or_update_alias(args[i], head);
+	{
+		name = arg[i];
+		value = equal + 1;
+		ret = create_or_update_alias(name, value, head, arg);
+	}
 	else
-	ret = print_alias(args[i], *head);
+	{
+		ret = print_alias(arg[i], *head);
+	}
 
-		if (ret == -1)
+	if (ret == -1)
 		return (-1);
 	}
 

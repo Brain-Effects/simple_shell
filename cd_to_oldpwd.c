@@ -17,6 +17,7 @@ int cd_to_oldpwd(void)
 	{
 	ret = write(STDERR_FILENO, "cd: OLDPWD not set\n", 19);
 	if (ret == -1 || ret < 19)
+	{
 		perror("cd");
 		return (-1);
 	}
@@ -29,6 +30,6 @@ int cd_to_oldpwd(void)
 	if (ret == -1 || ret < 1)
 		perror("cd");
 
+	}
 	return (cd_to_directory(oldpwd));
 }
-

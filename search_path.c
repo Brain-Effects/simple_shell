@@ -33,7 +33,7 @@ char *search_path(char *cmd)
 	}
 		dir = strtok(NULL, ":");
 	}
-
+	
 	free(path_copy);
 	free(full_path);
 	return (NULL);

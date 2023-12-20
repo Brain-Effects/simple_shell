@@ -5,9 +5,6 @@
 #include <sys/wait.h>
 #include "shell.h"
 
-#define MAX_CMD_LENGTH 1024
-#define MAX_ARGS 64
-
 /**
  * read_cmd - Reads a command from standard input
  * @cmd: Pointer to the command buffer

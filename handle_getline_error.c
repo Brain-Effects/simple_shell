@@ -5,9 +5,6 @@
 
 #define NEWLINE '\n'
 
-extern char *env[];
-char *cmd[20];
-
 /**
  * handle_getline_error - handles errors or EOF from getline
  * @buf: the input buffer

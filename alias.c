@@ -4,19 +4,32 @@
 #include <unistd.h>
 
 /**
- * alias - Implement the alias builtin command
+ * process_alias_args - Loop through the arguments and process them
  * @args: The arguments to the command
  * @head: A pointer to the head of the alias list
  * Return: 0 on success, -1 on failure
  */
-
-int alias(char **args, alias_t **head)
+int process_alias_args(char **args, alias_t **head)
 {
-	if (args == NULL || head == NULL)
-	return (-1);
+	int i;
+	char *name, *value, *equal;
 
-	if (args[0] == NULL)
-	return (print_alias_list(*head));
+	for (i = 0; args[i]; i++)
+	{
+		equal = strchr(args[i], '=');
+		if (equal)
+	{
+		name = args[i];
+		value = equal + 1;
+		if (create_or_update_alias(name, value, head, args) == -1)
+		return (-1);
+	}
+		else
+	{
+		if (print_alias(args[i], *head) == -1)
+		return (-1);
+		}
+	}
 
-	return (process_alias_args(args, head));
+	return (0);
 }

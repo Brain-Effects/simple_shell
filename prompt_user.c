@@ -5,9 +5,6 @@
 
 #define NEWLINE '\n'
 
-extern char *env[];
-char *cmd[20];
-
 /**
  * prompt_user - displays the prompt to the user
  */
