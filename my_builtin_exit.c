@@ -4,7 +4,7 @@
 #include <string.h>
 
 #define NEWLINE '\n'
-
+#define MAX_ARGS 64
 /**
  * my_exit - exits the shell with a given status or an error message
  * @env: the environment variables, a NULL-terminated array of strings
@@ -12,10 +12,11 @@
  * Return: nothing, exits the program
  */
 
-int my_exit(char **cmd, char **env)
+int my_exit(char **env)
 {
 	char *buf = NULL;
 	size_t buflen = 0;
+	char *cmd[MAX_ARGS];
 
 	do {
 	prompt_user();
