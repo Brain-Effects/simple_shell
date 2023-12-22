@@ -16,9 +16,9 @@
  */
 typedef struct alias
 {
-  char *name;
-  char *value;
-  struct alias *next;
+	char *name;
+	char *value;
+	struct alias *next;
 } alias_t;
 
 void copy_env_except(char **env, char **newenv, const char *name, int len);
@@ -40,7 +40,7 @@ int print_alias(char *name, alias_t *head);
 int create_alias(char *name, char *value, alias_t **head);
 int update_alias_value(alias_t *node, char *value);
 alias_t *find_alias(char *name, alias_t *head);
-int create_or_update_alias(char *name, char *value, alias_t **head, char **arg);
+	int create_or_update_alias(char *name, char *value, alias_t **head, char **arg);
 int print_alias_list(alias_t *head);
 int process_alias_args(char **args, alias_t **head);
 int alias(char **args, alias_t **head);
