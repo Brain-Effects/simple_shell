@@ -8,7 +8,6 @@
 /**
  * my_exit - exits the shell with a given status or an error message
  * @env: the environment variables, a NULL-terminated array of strings
- * @cmd: the command and its arguments, a NULL-terminated array of strings
  * Return: nothing, exits the program
  */
 

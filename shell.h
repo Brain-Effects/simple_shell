@@ -70,5 +70,9 @@ int handle_comment(char *line, int *index);
 int execute_file(char *filename);
 int main_execute(int argc, char *argv[]);
 char *itoa(int value, char *str, int base);
+char *itoa_buffer(int num, char *buffer, int base);
+char *realloc_str(char *new_str, int len);
+void shift_chars(char *new_str, int j, int len);
+void copy_value(char *new_str, char *temp, int i);
 
 #endif
